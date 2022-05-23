@@ -5,7 +5,7 @@ const app = express();
 
 const weatherData = require('../utils/weatherData');
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || '3000'
 
 const publicStaticDirPath = path.join(__dirname, '../public')
 
@@ -17,6 +17,8 @@ app.set('view engine', 'hbs');
 app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
 app.use(express.static(publicStaticDirPath));
+
+app.set("port",port);
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -54,7 +56,7 @@ app.get("*", (req, res) => {
     })
 })
 
+app.listen(port, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
 
-app.listen(port, () => {
-    console.log("Server is up and running on port: ", port);
-})
