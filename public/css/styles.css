@@ -10,10 +10,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  text-align: center;
+  
 }
 
 .main-content {
   flex-grow: 1;
+  
 }
 
 
@@ -50,21 +53,28 @@ h2 {
   justify-content: center;
   padding: 2rem;
   background-color: #fafafa;
- 
-  
 }
+
 
 .weatherLocation button{
   background: #080705;
   color:#fff;
   border: 1px solid transparent;
-  margin:5px;
+  margin: 5px ;
+  
+  
 }
 .search {
-  padding:1rem;
+  padding:2px 4px 2px 4px;
+  border-radius: 3px;
 }
 .weatherLocation input:focus{
   outline: 0 none;
+  
+}
+.cityname{
+  outline:1px solid rgb(135, 114, 114);
+  border-radius: 3px;
 }
 
 .widget .weatherIcon {
